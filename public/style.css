@@ -1,4 +1,16 @@
 body {
   background-color: #000;
-  color: chartreuse;
+  color: #3cff3c;
+}
+
+.cursor {
+  height: 16px;
+  width: 10px;
+  background-color: #3cff3c;
+  opacity: 1;
+  display: inline-block;
+}
+
+.hide {
+  opacity: 0;
 }
