@@ -6,9 +6,12 @@ $(function () {
   $('.go-button').on('click', function(){
     var message = $('.message-input').val();
     console.log(message);
+
+    message_count++;
     displayMessage(message);
   });
 
+  var message_count = 0;
   var count = 0;
 
   var socket = io.connect('http://localhost:3000');
@@ -22,22 +25,21 @@ $(function () {
     displayMessage(message);
     // count++
   });
-});
 
-function displayMessage(message){
-  var container = {};
-  $('.message-container').append('<div class="message"></div>');
-  // $('.message').append(message);
-  var wait_count = 0;
-  var count = 0;
-  for(var i = 0; i <= message.length; i++){
-    wait_count += 100;
-    window.setTimeout(function(){
-      // wait
-
-      $('.message').append(message.charAt(count));
-      // console.log('wait',message, message.charAt(temp), temp);
-      count++
-    },wait_count)
+  function displayMessage(message){
+    var container = {};
+    message += '\n';
+    // $('.message-container').append('<div class="message' + message_count + '"></div>');
+    $('<br/><div class="message message' + message_count + '"></div>').insertBefore('.cursor');
+    // $('.message').append(message);
+    var wait_count = 0;
+    var count = 0;
+    for(var i = 0; i <= message.length; i++){
+      wait_count += 100;
+      window.setTimeout(function(){
+        $('.message' + message_count).append(message.charAt(count));
+        count++
+      },wait_count)
+    }
   }
-}
+});
