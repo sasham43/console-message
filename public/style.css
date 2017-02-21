@@ -1,16 +1,41 @@
 body {
   background-color: #000;
   color: #3cff3c;
+  font-family: monospace;
+  font-size: 16px;
 }
 
 .cursor {
-  height: 16px;
+  height: 24px;
+  vertical-align: middle;
+  margin-left: -10px;
   width: 10px;
   background-color: #3cff3c;
   opacity: 1;
   display: inline-block;
+  transition: opacity ease-in-out 0.5s;
 }
 
 .hide {
   opacity: 0;
+}
+
+.message-container {
+  position: relative;
+}
+
+.message-input,
+.go-button {
+  background-color: black;
+  color: #3cff3c;
+}
+
+.go-button,
+.message-input {
+  border: solid 2px #3cff3c;
+}
+
+.message-container,
+.message {
+  display: inline-block;
 }

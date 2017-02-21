@@ -6,12 +6,25 @@
 
     <link rel="stylesheet" href="style.css" />
     <script src="jquery.min.js"></script>
+    <script src="socket.io.min.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
     <h1>Lets go</h1>
+    <div class="input-container">
+      <input type="text" class="message-input" /><button class="go-button">go</button>
+    </div>
     <p>
-      This text is so rad right?<span class="cursor"></span>
+      This text is so rad right?
     </p>
+    <div class="message-container">
+      <!-- <div class="message">
+        this is a message.
+          <div class="mask">
+
+          </div>
+      </div> -->
+    </div>
+    <span class="cursor"></span>
   </body>
 </html>
